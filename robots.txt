@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://page-faus.vercel.app/sitemap.xml
