@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Prato Leve Low Carb</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="50 receitas low carb caseiras e leves, com o peso e os nutrientes de cada ingrediente, cardápio de 14 dias e lista de compras.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+<style>
+/* Layout: faixas alternadas papel/verde-escuro, conteúdo em coluna de 1120px; celular primeiro, mockups de celular como prova do produto. */
+:root{
+  --paper:#F5F0E6; --paper2:#ECE4D4; --card:#FBF8F2; --ink:#1D2320; --mute:#5F625B; --line:#DCD2C0;
+  --green:#1F3A2E; --green2:#14261E; --gold:#E2B871; --terra:#A64B2A; --sage:#5E7A4F; --onDark:#F4EDE0; --onDarkMute:#BFC8BE;
+  --cta:#D9622B; --ctaInk:#fff;
+  --display:"Fraunces",Georgia,"Times New Roman",serif; --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#151A17; --paper2:#1C231F; --card:#202823; --ink:#EEE8DC; --mute:#A9AEA6; --line:#33403A;
+  --green:#203D30; --green2:#0F1C16; --gold:#E8C38A; --terra:#E08A63; --sage:#8DAA7C; --onDark:#F4EDE0; --onDarkMute:#BFC8BE;
+  --cta:#E5723A; --ctaInk:#fff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#151A17; --paper2:#1C231F; --card:#202823; --ink:#EEE8DC; --mute:#A9AEA6; --line:#33403A;
+  --green:#203D30; --green2:#0F1C16; --gold:#E8C38A; --terra:#E08A63; --sage:#8DAA7C; --onDark:#F4EDE0; --onDarkMute:#BFC8BE;
+  --cta:#E5723A; --ctaInk:#fff; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:72px}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.015em;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,4.6vw,48px);margin-bottom:16px}
+h3{font-size:22px}
+p{margin:0}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--terra);margin-bottom:12px}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--mute);max-width:62ch}
+.dark{background:var(--green2);color:var(--onDark)}
+.dark .lead{color:var(--onDarkMute)}
+.dark .eyebrow{color:var(--gold)}
+.alt{background:var(--paper2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cta);color:var(--ctaInk);text-decoration:none;font-weight:700;font-size:18px;padding:18px 30px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(217,98,43,.7);transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(217,98,43,.8)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn small{font-weight:500;opacity:.9}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:14px;color:var(--mute)}
+.dark .trust{color:var(--onDarkMute)}
+.trust span::before{content:"✓ ";color:var(--sage);font-weight:700}
+.dark .trust span::before{color:var(--gold)}
+
+/* topo */
+.topbar{background:var(--green);color:var(--onDark);text-align:center;font-size:14px;padding-block:9px}
+.topbar b{color:var(--gold)}
+
+/* hero */
+.hero{background:var(--green2);color:var(--onDark);padding-block:56px 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end}
+.hero h1{font-size:clamp(40px,6.4vw,76px);font-weight:400;font-variation-settings:"SOFT" 100,"WONK" 1}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:300}
+.hero .lead{margin:20px 0 28px;color:var(--onDarkMute)}
+.hero-copy{padding-bottom:64px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chips span{border:1px solid rgba(244,237,224,.28);border-radius:999px;padding:6px 12px;font-size:13.5px;color:var(--onDark)}
+.phones{position:relative;height:560px;min-width:0}
+.phone{position:absolute;bottom:-40px;width:270px;border-radius:38px;background:#0b0f0d;padding:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.phone img{border-radius:29px;width:100%;aspect-ratio:9/16;object-fit:cover;object-position:top}
+.phone.a{left:6%;transform:rotate(-5deg);z-index:2}
+.phone.b{right:2%;bottom:-10px;transform:rotate(6deg)}
+
+/* faixa de fotos */
+.strip{display:flex;gap:10px;overflow:hidden;padding-block:14px;background:var(--green2)}
+.strip-track{display:flex;gap:10px;animation:slide 60s linear infinite;flex:none}
+.strip img{width:200px;height:150px;object-fit:cover;border-radius:12px;flex:none}
+@keyframes slide{to{transform:translateX(calc(-50% - 5px))}}
+@media (prefers-reduced-motion:reduce){.strip-track{animation:none}.btn{transition:none}}
+
+/* dor */
+.pain{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.pain ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.pain li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 52px;position:relative}
+.pain li::before{content:"✕";position:absolute;left:18px;top:15px;width:22px;height:22px;border-radius:50%;background:var(--terra);color:#fff;font-size:12px;display:grid;place-items:center;font-weight:700}
+.turn{margin-top:24px;font-family:var(--display);font-size:24px;line-height:1.3}
+.turn b{color:var(--terra);font-weight:500}
+
+/* números */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(244,237,224,.2);margin-top:36px}
+.nums div{padding:22px 18px 0 0}
+.nums b{display:block;font-family:var(--display);font-size:clamp(36px,5vw,54px);font-weight:400;color:var(--gold);line-height:1}
+.nums span{font-size:15px;color:var(--onDarkMute)}
+
+/* receitas */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 22px}
+.tabs button{font:inherit;font-size:15px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 16px;border-radius:999px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--green);color:var(--onDark);border-color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.rcp{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+.rcp img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.rcp div{padding:10px 12px 12px}
+.rcp b{display:block;font-size:15px;line-height:1.25;font-weight:600}
+.rcp span{font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
+.more{margin-top:18px;font-size:15px;color:var(--mute)}
+
+/* diferencial: tabela */
+.diff{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.tablecard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0;box-shadow:0 20px 40px -28px rgba(0,0,0,.35)}
+.tablecard h3{font-size:20px;margin-bottom:4px}
+.tablecard .sub{font-size:13px;color:var(--mute);margin-bottom:14px}
+.tscroll{overflow-x:auto}
+table.vt{width:100%;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums;min-width:440px}
+.vt th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);text-align:right;padding:6px 6px;border-bottom:2px solid var(--ink)}
+.vt th:first-child,.vt td:first-child{text-align:left;padding-left:0}
+.vt td{text-align:right;padding:8px 6px;border-bottom:1px solid var(--line)}
+.vt td:first-child{font-weight:600}
+.vt td.g{color:var(--terra);font-weight:700}
+.vt tr.tot td{border-bottom:0;border-top:2px solid var(--ink);font-weight:700;background:var(--paper2)}
+.checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.checks li{padding-left:32px;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:4px;width:20px;height:20px;border-radius:50%;background:var(--sage);-webkit-mask:radial-gradient(circle,#000 99%,transparent 0);mask:none}
+.checks li::after{content:"✓";position:absolute;left:5px;top:1px;color:#fff;font-size:13px;font-weight:700}
+
+/* por dentro: celulares */
+.inside{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:36px}
+.inside figure{margin:0;min-width:0}
+.inside .ph{border-radius:26px;background:#0b0f0d;padding:7px;box-shadow:0 20px 40px -24px rgba(0,0,0,.5)}
+.inside .ph img{border-radius:20px;aspect-ratio:9/16;object-fit:cover;object-position:top;width:100%}
+.inside figcaption{margin-top:12px;font-size:15px}
+.inside figcaption b{display:block;font-family:var(--display);font-size:19px;font-weight:500}
+.inside figcaption span{color:var(--mute);font-size:14px}
+
+/* passos */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--green);color:var(--onDark);font-family:var(--display);font-size:19px;margin-bottom:14px}
+.step p{color:var(--mute);font-size:16px;margin-top:6px}
+
+/* bônus */
+.bonus{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.bcard{background:rgba(244,237,224,.06);border:1px solid rgba(244,237,224,.16);border-radius:18px;padding:26px;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start}
+.bcard img{border-radius:12px;width:120px;aspect-ratio:9/16;object-fit:cover;object-position:top}
+.tag{display:inline-block;background:var(--gold);color:var(--green2);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.bcard h3{color:var(--onDark);margin-bottom:8px}
+.bcard p{color:var(--onDarkMute);font-size:15.5px}
+.bcard .val{margin-top:10px;font-size:14px;color:var(--gold)}
+
+/* para quem */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.who > div{border-radius:16px;padding:24px;border:1px solid var(--line);background:var(--card)}
+.who h3{margin-bottom:12px}
+.who ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.who .no h3{color:var(--terra)}
+
+/* oferta */
+.offer{background:var(--green2);color:var(--onDark)}
+.offer-card{max-width:620px;margin:0 auto;background:var(--paper);color:var(--ink);border-radius:24px;padding:34px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border:3px solid var(--gold)}
+.offer-card h2{font-size:clamp(28px,4vw,38px);text-align:center}
+.inc{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px}
+.inc li{display:flex;justify-content:space-between;gap:16px;padding-bottom:10px;border-bottom:1px dashed var(--line);font-size:16px}
+.inc li span:last-child{color:var(--sage);font-weight:700;white-space:nowrap}
+.price{text-align:center;margin:8px 0 22px}
+.price .only{font-size:15px;color:var(--mute)}
+.price b{display:block;font-family:var(--display);font-size:clamp(56px,9vw,76px);font-weight:500;line-height:1;color:var(--green)}
+.price b sup{font-size:.4em;vertical-align:.95em;margin-right:4px}
+.price .pay{font-size:15px;color:var(--mute);margin-top:6px}
+.offer-card .btn{width:100%;font-size:19px}
+.offer-card .trust{justify-content:center}
+.seals{display:flex;justify-content:center;gap:18px;margin-top:18px;font-size:13px;color:var(--mute);flex-wrap:wrap}
+
+/* garantia */
+.guar{display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:center;max-width:860px;margin:0 auto}
+.seal{width:150px;height:150px;border-radius:50%;border:3px solid var(--green);display:grid;place-items:center;text-align:center;color:var(--green);font-family:var(--display);position:relative}
+.seal b{font-size:48px;line-height:.9;display:block}
+.seal span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-family:var(--body);font-weight:700}
+
+/* faq */
+.faq{max-width:820px;margin:28px auto 0;display:grid;gap:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 20px}
+summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:14px;font-size:24px;color:var(--terra);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:18px;color:var(--mute)}
+
+.final{text-align:center}
+.final .lead{margin:0 auto 26px}
+footer{background:var(--green2);color:var(--onDarkMute);font-size:13.5px;padding-block:36px 110px}
+footer p+p{margin-top:10px}
+
+/* barra fixa no celular */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--green2);padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));display:none;align-items:center;gap:12px;border-top:1px solid rgba(244,237,224,.15);transform:translateY(110%);transition:transform .25s ease}
+.sticky.show{transform:none}
+.sticky .p{color:var(--onDark);font-size:13px;line-height:1.2;flex:none}
+.sticky .p b{display:block;font-family:var(--display);font-size:22px;color:var(--gold);font-weight:500}
+.sticky .btn{flex:1;padding:14px 16px;font-size:16px}
+
+@media (max-width:900px){
+  section{padding-block:56px}
+  .hero-grid,.pain,.diff{grid-template-columns:1fr}
+  .hero-copy{padding-bottom:8px}
+  .phones{height:430px;max-width:440px;margin:0 auto;width:100%}
+  .phone{width:200px;border-radius:30px;padding:8px}.phone img{border-radius:23px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .inside{grid-template-columns:repeat(2,1fr)}
+  .steps,.bonus,.who{grid-template-columns:1fr}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .sticky{display:flex}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .btn{width:100%;padding:17px 22px}
+  .bcard{grid-template-columns:90px 1fr;padding:20px}.bcard img{width:90px}
+  .guar{grid-template-columns:1fr;text-align:center}.seal{margin:0 auto}
+  .offer-card{padding:24px 18px}
+  .phone{width:170px}
+  .phones{height:360px}
+}
+
+/* ===== cabeçalho fixo ===== */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--green2)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(20,38,30,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(244,237,224,.1)}
+.navin{display:flex;align-items:center;gap:20px;height:62px}
+.logo{font-family:var(--display);font-size:24px;color:var(--onDark);text-decoration:none;display:flex;align-items:baseline;gap:5px;flex:none}
+.logo em{color:var(--gold);font-weight:300}
+.logo small{font-family:var(--body);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--onDark);opacity:.6;margin-left:6px}
+.links{display:flex;gap:4px;margin-left:auto}
+.links a{color:var(--onDarkMute);text-decoration:none;font-size:15px;padding:8px 12px;border-radius:999px}
+.links a:hover,.links a.on{color:var(--onDark);background:rgba(244,237,224,.08)}
+.navcta{background:var(--cta);color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;flex:none}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--gold);width:0}
+.topbar{display:none}
+
+/* ===== hero ===== */
+.hero{background:radial-gradient(120% 80% at 85% 10%,#244736 0%,var(--green2) 55%);color:var(--onDark);padding-block:48px 28px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.hero-copy{padding-bottom:0}
+.kick{display:inline-flex;align-items:center;gap:10px;background:rgba(226,184,113,.14);border:1px solid rgba(226,184,113,.4);color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;margin-bottom:22px}
+.kick .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(226,184,113,.25)}
+.hero h1{font-size:clamp(46px,7vw,86px);line-height:.98}
+.hero h1 em{display:block}
+.hero .lead{margin:20px 0 22px}
+.hl{list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.hl li{background:rgba(244,237,224,.05);border:1px solid rgba(244,237,224,.14);border-radius:14px;padding:12px 14px}
+.hl b{display:block;font-family:var(--display);font-size:26px;font-weight:500;color:var(--gold);line-height:1.05}
+.hl span{font-size:13.5px;color:var(--onDarkMute);line-height:1.3;display:block;margin-top:4px}
+.ctarow{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.ghost{color:var(--onDark);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(244,237,224,.4);padding-bottom:2px}
+.visual{position:relative;height:600px;min-width:0}
+.glow{position:absolute;left:50%;top:50%;width:420px;height:420px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(226,184,113,.28),transparent 65%)}
+.phone.main{position:absolute;left:50%;top:50%;width:290px;transform:translate(-50%,-50%) rotate(-3deg);z-index:2;bottom:auto}
+.float{position:absolute;z-index:3;background:var(--paper);color:var(--ink);border-radius:14px;padding:10px 14px;box-shadow:0 16px 30px -14px rgba(0,0,0,.55);animation:bob 5s ease-in-out infinite}
+.float b{display:block;font-family:var(--display);font-size:24px;font-weight:500;line-height:1}
+.float span{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.f1{left:0;top:16%}.f1 b{color:var(--green)}
+.f2{right:0;top:30%;animation-delay:-1.5s;background:#F1DFC0}.f2 b{color:var(--terra)}
+.f3{left:2%;bottom:20%;animation-delay:-3s}
+.f4{right:-2%;bottom:9%;animation-delay:-2s;background:var(--cta);display:flex;gap:10px;align-items:center}
+.f4 span{color:#fff;text-transform:none;letter-spacing:0;font-size:14px;line-height:1.2}
+.f4 .tapico{font-size:24px}
+
+.hero .trust{color:var(--onDarkMute)}.hero .trust span::before{color:var(--gold)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.sec-chips{display:flex;gap:8px;overflow-x:auto;padding-block:30px 6px;scrollbar-width:none}
+.sec-chips::-webkit-scrollbar{display:none}
+.sec-chips a{flex:none;color:var(--onDark);text-decoration:none;font-size:14px;border:1px solid rgba(244,237,224,.25);border-radius:999px;padding:8px 14px}
+.sec-chips a:hover{background:rgba(244,237,224,.08)}
+section[id]{scroll-margin-top:70px}
+
+/* ===== low carb ===== */
+.lcg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.lc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.lcn{font-family:var(--display);color:var(--terra);font-size:15px;margin-bottom:10px}
+.lc p{color:var(--mute);margin-top:6px;font-size:16px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.cmpc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.cmpc.good{border-color:var(--sage)}
+.cmpl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--mute)}
+.cmpc b{display:block;font-family:var(--display);font-size:21px;font-weight:500;margin:4px 0 12px}
+.bar{height:10px;border-radius:99px;background:var(--paper2);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--terra);border-radius:99px}
+.cmpc.good .bar i{background:var(--sage)}
+.cmpv{display:block;margin-top:8px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+
+/* ===== demo do PDF ===== */
+.demo-sec{background:var(--paper)}
+.demo{display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:center}
+.demo-copy{min-width:0}
+.flow{list-style:none;padding:0;margin:24px 0 18px;display:grid;gap:8px;counter-reset:f}
+.flow li{counter-increment:f;display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:center;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;transition:background .2s,border-color .2s}
+.flow li::before{content:counter(f);grid-row:1/3;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--paper2);font-weight:700;font-size:14px}
+.flow li b{font-size:16px}.flow li span{font-size:14px;color:var(--mute)}
+.flow li.on{border-color:var(--terra);background:#F7E7DC}
+.flow li.on::before{background:var(--terra);color:#fff}
+.navnote{font-size:14.5px;color:var(--mute);background:var(--paper2);border-radius:12px;padding:12px 14px}
+.navnote b{color:var(--ink)}
+.demo-phone{text-align:center;min-width:0}
+.phone.dp{position:relative;display:block;width:100%;max-width:320px;margin:0 auto;border:0;cursor:pointer;transform:none;left:auto;bottom:auto}
+.phone.dp img{transition:opacity .25s}
+.tap{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(255,255,255,.35);border:3px solid #fff;box-shadow:0 0 0 3px var(--cta);pointer-events:none;animation:pulse 1.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.hint{font-size:14px;color:var(--mute);margin-top:14px}
+.dctl{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:8px;font-variant-numeric:tabular-nums;font-size:14px;color:var(--mute)}
+.dctl button{font:inherit;font-size:20px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+@media (prefers-reduced-motion:reduce){.float,.tap{animation:none}}
+:root[data-theme="dark"] .flow li.on{background:#3a2a22}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .flow li.on{background:#3a2a22}}
+
+@media (max-width:900px){
+  .links{display:none}.navcta{margin-left:auto}
+  .hero{padding-block:28px 18px}
+  .hero-grid{grid-template-columns:1fr;gap:8px}
+  .visual{height:400px;order:0;margin:0 -16px}
+  .hero-copy{display:contents}
+  .kick{order:-3;justify-self:start}
+  .hero h1{order:-2}
+  .visual{order:-1}
+  .hero .lead,.hl,.ctarow,.hero .trust{order:1}
+  .hl{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .hl b{font-size:21px}.hl span{font-size:12px}
+  .phone.main{width:190px}
+  .glow{width:320px;height:320px}
+  .float b{font-size:20px}.float{padding:8px 11px}
+  .f1{left:16px}.f2{right:16px}.f3{left:16px}.f4{right:16px}
+  .ctarow .btn{width:100%}.ctarow{justify-content:center}
+  .lcg,.cmp{grid-template-columns:1fr}
+  .demo{grid-template-columns:1fr;gap:28px}
+  .demo-phone{order:-1}
+  .phone.dp{max-width:270px}
+}
+@media (max-width:420px){.hl{grid-template-columns:1fr}.hl li{display:flex;gap:10px;align-items:baseline}.hl span{margin:0}}
+
+/* ===== marca Prato Leve ===== */
+.logo{font-family:"Shrikhand",var(--display);font-size:22px;align-items:center;gap:8px}
+.logo .ico{width:30px;height:30px;color:var(--gold);flex:none}
+.logo em{font-style:normal;font-weight:400}
+.hero h1{font-family:"Shrikhand",var(--display);font-weight:400;font-variation-settings:normal;letter-spacing:-.01em;line-height:1.02;font-size:clamp(42px,6.3vw,80px)}
+.hero h1 em{font-style:normal;font-weight:400}
+.wm{font-family:"Shrikhand",var(--display);font-weight:400;color:var(--green)}
+.wm em{font-style:normal;color:var(--terra)}
+.wmsub{text-align:center;font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--mute);margin:-6px 0 4px}
+.final h2{font-family:"Shrikhand",var(--display);font-weight:400}
+
+/* ===== hero com foto ===== */
+.visual{height:600px}
+.hphoto{position:absolute;right:0;top:20px;width:86%;height:540px;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(0,0,0,.7)}
+.hphoto img{width:100%;height:100%;object-fit:cover;object-position:42% center}
+.hphoto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,38,30,.55))}
+.visual .phone.main{left:0;top:auto;bottom:-10px;width:200px;transform:rotate(-4deg)}
+.visual .glow{display:none}
+.f1{left:auto;right:58%;top:40px}
+.f2{right:-8px;top:46%}
+.f4{right:12px;bottom:28px}
+.tapdot{width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.35);animation:pulse 1.4s ease-out infinite;flex:none}
+/* ===== diferencial com foto ===== */
+.dphoto{margin:22px 0 0;position:relative;border-radius:18px;overflow:hidden}
+.dphoto img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.dphoto figcaption{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(251,248,242,.95);color:#1D2320;border-radius:12px;padding:10px 14px;font-size:14px}
+.dphoto figcaption b{font-family:var(--display);font-size:20px;font-weight:500;color:#A64B2A}
+.dphoto figcaption span{color:#5F625B}
+/* ===== passos com foto ===== */
+.step{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.step::before{display:none}
+.step img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.stx{padding:18px 20px 22px;position:relative}
+.sn{position:absolute;top:-22px;left:18px;width:42px;height:42px;border-radius:50%;background:var(--cta);color:#fff;display:grid;place-items:center;font-family:"Shrikhand",var(--display);font-size:19px;box-shadow:0 6px 14px -6px rgba(0,0,0,.4)}
+.stx h3{margin-top:10px}
+/* ===== demo automática ===== */
+.phone.dp{cursor:default}
+.screen{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:9/16;background:#F5F0E6}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:0}
+#sB{opacity:0;transform:translateX(30%)}
+#sB.in{opacity:1;transform:none;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.finger{position:absolute;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;background:rgba(255,255,255,.55);border:2px solid rgba(255,255,255,.95);box-shadow:0 2px 10px rgba(0,0,0,.35);opacity:0;transform:scale(1.4);transition:left .7s ease,top .7s ease,opacity .3s,transform .3s;pointer-events:none;z-index:3}
+.finger.show{opacity:1;transform:scale(1)}
+.finger.press{transform:scale(.72);background:rgba(217,98,43,.6)}
+.dctl{gap:12px}
+.dctl .play{width:48px;height:48px;background:var(--green);color:#fff;border-color:var(--green);font-size:15px}
+.hint{display:flex;align-items:center;justify-content:center;gap:8px}
+.recdot{width:9px;height:9px;border-radius:50%;background:#E0453A;animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.flow li{padding:8px 12px}
+@media (prefers-reduced-motion:reduce){.recdot,.tapdot{animation:none}#sB.in{transition:none}}
+@media (max-width:900px){
+  .visual{height:430px}
+  .hphoto{top:0;width:100%;height:380px;border-radius:22px}
+  .visual .phone.main{width:140px;left:12px;bottom:-6px;border-radius:24px;padding:6px}
+  .visual .phone.main img{border-radius:18px}
+  .f1{right:auto;left:auto;right:16px;top:16px}
+  .f2{right:16px;top:auto;bottom:118px}
+  .f4{right:16px;bottom:44px}
+  .dphoto img{aspect-ratio:4/3}
+  .flow{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="topo">
+  <div class="wrap navin">
+    <a class="logo" href="#topo"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="25" r="14" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="24" cy="25" r="8" fill="none" stroke="currentColor" stroke-width="2" opacity=".55"/><path d="M4 7v8a3 3 0 0 0 6 0V7M7 7v34M44 7c-3.5 2-5 6-5 12h5v22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Prato <em>Leve</em></span><small>low carb</small></a>
+    <nav class="links" aria-label="Seções da página">
+      <a href="#lowcarb">Low carb</a><a href="#receitas">Receitas</a><a href="#pdf">Como é o PDF</a><a href="#bonus">Bônus</a><a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="navcta cta" href="#oferta">Comprar</a>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="kick"><span class="dot"></span>Guia de dieta low carb · PDF</div>
+      <h1>Low carb com <em>comida de casa.</em></h1>
+      <p class="lead">50 receitas leves para emagrecer sem arroz, pão e macarrão sobrando. Ovo, frango, carne e legumes de mercado, com o peso e os nutrientes de cada ingrediente.</p>
+      <ul class="hl">
+        <li><b>≈33 g</b><span>de carboidrato líquido por dia no cardápio</span></li>
+        <li><b>≈118 g</b><span>de proteína por dia para segurar a fome</span></li>
+        <li><b>14 dias</b><span>de cardápio pronto com lista de compras</span></li>
+      </ul>
+      <div class="ctarow">
+        <a class="btn cta" href="#oferta">Quero começar a low carb</a>
+        <a class="ghost" href="#pdf">Ver o PDF por dentro ↓</a>
+      </div>
+      <div class="trust"><span>Acesso na hora</span><span>Garantia de 7 dias</span><span>Pix ou cartão</span></div>
+    </div>
+    <div class="visual">
+      <div class="hphoto"><img src="img/f-fit.jpg" alt="Mulher sorrindo segurando um prato de salada com frango grelhado na cozinha"></div>
+      <div class="phone main" aria-hidden="true"><img src="img/p-receita.jpg" alt=""></div>
+      <div class="float f1" aria-hidden="true"><b>255</b><span>kcal no prato</span></div>
+      <div class="float f2" aria-hidden="true"><b>4,9 g</b><span>carbo líquido</span></div>
+      <div class="float f4" aria-hidden="true"><span class="tapdot"></span><span>Botões clicáveis<br>dentro do PDF</span></div>
+    </div>
+  </div>
+  <div class="wrap sec-chips" aria-label="Ir para">
+    <a href="#lowcarb">Por que low carb</a><a href="#receitas">Ver as 50 receitas</a><a href="#pdf">Testar os botões do PDF</a><a href="#bonus">Bônus</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="strip-track" id="strip"></div><div class="strip-track" id="strip2"></div></div>
+
+<section class="alt" id="lowcarb">
+  <div class="wrap">
+    <div class="eyebrow">Por que low carb</div>
+    <h2>Menos carboidrato, mais saciedade.</h2>
+    <p class="lead">Na low carb você tira do prato o que faz a fome voltar rápido e coloca proteína, legumes e gordura boa na quantidade certa. O guia faz essa conta por você.</p>
+    <div class="lcg">
+      <div class="lc"><div class="lcn">01</div><h3>Proteína em toda refeição</h3><p>Ovo, frango, patinho, peixe, queijo ou iogurte. É o que mais dá saciedade.</p></div>
+      <div class="lc"><div class="lcn">02</div><h3>Legumes no lugar do arroz</h3><p>Couve-flor vira arroz e purê, abobrinha vira macarrão, berinjela vira lasanha.</p></div>
+      <div class="lc"><div class="lcn">03</div><h3>Gordura pesada</h3><p>Azeite, queijo e castanha entram em gramas. Pouca coisa muda muito a conta.</p></div>
+    </div>
+    <div class="cmp">
+      <div class="cmpc"><span class="cmpl">Prato comum</span><b>Arroz branco 100 g</b><div class="bar"><i style="width:100%"></i></div><span class="cmpv">28 g de carboidrato</span></div>
+      <div class="cmpc good"><span class="cmpl">No Prato Leve</span><b>Arroz de couve-flor 100 g</b><div class="bar"><i style="width:16%"></i></div><span class="cmpv">4,5 g de carboidrato</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap pain">
+    <div>
+      <div class="eyebrow">Se você já tentou</div>
+      <h2>A dieta não falha por falta de força de vontade.</h2>
+      <p class="lead">Ela falha quando a comida é estranha, cara ou difícil de fazer. Ou quando você nunca sabe quanto está comendo de verdade.</p>
+    </div>
+    <div>
+      <ul>
+        <li>Receita “fit” com ingrediente que você não acha no mercado do bairro.</li>
+        <li>Prato bonito na foto que leva uma hora para fazer depois do trabalho.</li>
+        <li>Cardápio que diz “1 porção”, mas não diz quantos gramas é uma porção.</li>
+        <li>Azeite, queijo e castanha “de olho”, que somam centenas de calorias sem você perceber.</li>
+      </ul>
+      <p class="turn">O Prato Leve resolve isso com <b>comida brasileira de verdade</b>, pesada grama a grama.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">O que vem no guia</div>
+    <h2>Tudo pronto para você só escolher, pesar e comer.</h2>
+    <p class="lead">Ovos mexidos, bife acebolado, frango com legumes, canja, escondidinho de couve-flor. Pratos que você já conhece, em versão leve e sem carboidrato sobrando.</p>
+    <div class="nums">
+      <div><b>50</b><span>receitas caseiras com foto do prato</span></div>
+      <div><b>14</b><span>dias de cardápio com 6 refeições</span></div>
+      <div><b>≈1.260</b><span>kcal por dia no cardápio, em média</span></div>
+      <div><b>≈118 g</b><span>de proteína por dia para manter a saciedade</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="receitas">
+  <div class="wrap">
+    <div class="eyebrow">As receitas</div>
+    <h2>Veja as 50 receitas que estão dentro.</h2>
+    <p class="lead">Toque na categoria. As calorias são da porção inteira, para 1 pessoa.</p>
+    <div class="tabs" role="group" aria-label="Categorias">
+      <button type="button" id="t-cafe" data-c="cafe" aria-pressed="true">Café da manhã</button>
+      <button type="button" id="t-almoco" data-c="almoco" aria-pressed="false">Almoço</button>
+      <button type="button" id="t-lanche" data-c="lanche" aria-pressed="false">Lanches</button>
+      <button type="button" id="t-jantar" data-c="jantar" aria-pressed="false">Jantar</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="more" id="count"></p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap diff">
+    <div>
+      <div class="eyebrow">O diferencial</div>
+      <h2>Você sabe exatamente o que está comendo.</h2>
+      <p class="lead">A maioria dos guias mostra só o total do prato. No Prato Leve, cada ingrediente tem o próprio valor. Assim você vê de onde vêm as calorias e troca o que quiser sem perder a conta.</p>
+      <figure class="dphoto"><img src="img/f-balanca.jpg" alt="Peito de frango cru sobre uma balança de cozinha" loading="lazy"><figcaption><b>150 g</b> de peito de frango cru <span>= 178 kcal · 32 g de proteína</span></figcaption></figure>
+      <ul class="checks">
+        <li>Peso cru em gramas, do jeito que vai para a panela</li>
+        <li>Calorias, proteína, carboidrato, gordura e fibra por ingrediente</li>
+        <li>Carboidrato líquido (carbo menos fibra) de cada porção</li>
+        <li>Valores calculados pela TACO, a tabela brasileira da UNICAMP</li>
+      </ul>
+    </div>
+    <div class="tablecard">
+      <h3 id="tname"></h3>
+      <p class="sub">Exemplo real de uma página do guia · valores em gramas</p>
+      <div class="tscroll"><table class="vt" id="vt"></table></div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-sec" id="pdf">
+  <div class="wrap demo">
+    <div class="demo-copy">
+      <div class="eyebrow">PDF com botões que funcionam</div>
+      <h2>Toque e vá direto para a receita.</h2>
+      <p class="lead">Veja o PDF sendo usado de verdade. Cada toque leva para a página certa, sem rolar página por página.</p>
+      <ol class="flow" id="flow">
+        <li><b>Início</b><span>Toque na categoria</span></li>
+        <li><b>Lista do almoço</b><span>Toque no prato</span></li>
+        <li><b>Receita</b><span>Foto, macros e ingredientes</span></li>
+        <li><b>Valores</b><span>Nutrientes de cada ingrediente</span></li>
+        <li><b>Modo de preparo</b><span>Fogo, tempo e ponto</span></li>
+        <li><b>Cardápio</b><span>Barra do topo leva aos 14 dias</span></li>
+        <li><b>Dia 1</b><span>As 6 refeições do dia</span></li>
+        <li><b>Compras</b><span>Lista da semana somada</span></li>
+      </ol>
+    </div>
+    <div class="demo-phone">
+      <div class="phone dp" id="dp">
+        <div class="screen" id="screen"><img id="sA" src="img/d-0.jpg" alt="Página do PDF no celular"><img id="sB" src="img/d-0.jpg" alt="" aria-hidden="true"><span class="finger" id="finger"></span></div>
+      </div>
+      <div class="dctl">
+        <button type="button" id="dprev" aria-label="Passo anterior">‹</button>
+        <button type="button" id="dplay" class="play" aria-label="Pausar demonstração">❚❚</button>
+        <button type="button" id="dnext" aria-label="Próximo passo">›</button>
+      </div>
+      <p class="hint"><span class="recdot"></span>Demonstração real do PDF · <span id="dcount">1 / 8</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Como funciona</div>
+    <h2>Três passos, sem complicação.</h2>
+    <div class="steps">
+      <div class="step"><img src="img/f-mercado.jpg" alt="Mulher no mercado olhando a lista de compras no celular" loading="lazy"><div class="stx"><span class="sn">1</span><h3>Faça uma compra</h3><p>A lista da semana já vem somada. Só ovo, frango, carne, legumes e iogurte.</p></div></div>
+      <div class="step"><img src="img/f-marmitas.jpg" alt="Potes de vidro com frango desfiado, ovos, carne moída e legumes prontos" loading="lazy"><div class="stx"><span class="sn">2</span><h3>Cozinhe no domingo</h3><p>Em cerca de 1 hora a base da semana fica pronta. Depois, cada refeição leva de 5 a 15 minutos.</p></div></div>
+      <div class="step"><img src="img/f-comendo.jpg" alt="Mulher sorrindo comendo bife acebolado com salada" loading="lazy"><div class="stx"><span class="sn">3</span><h3>Siga o cardápio</h3><p>Abra o dia no celular, toque no prato e coma sem fazer conta.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="bonus">
+  <div class="wrap">
+    <div class="eyebrow">Bônus inclusos</div>
+    <h2>Você ainda leva estes extras.</h2>
+    <div class="bonus">
+      <div class="bcard"><img src="img/p-calc.jpg" alt="Tela da calculadora de macros no celular" loading="lazy"><div><span class="tag">Bônus 1</span><h3>Calculadora Prato Leve</h3><p>Escolha o alimento, a quantidade (2 ovos, 1 fatia, ou o peso na balança) e veja na hora calorias, proteína, carboidrato, gordura e fibra. Monte o seu dia e acompanhe a meta.</p><p class="val">Liberada na sua área de membros no 10º dia após a compra</p></div></div>
+      <div class="bcard"><img src="img/p-a4.jpg" alt="Página da versão para imprimir com duas receitas" loading="lazy"><div><span class="tag">Bônus 2</span><h3>Versão para imprimir</h3><p>O mesmo guia em folha A4, com 2 receitas por página, para colar na geladeira ou montar uma pasta na cozinha.</p></div></div>
+      <div class="bcard"><img src="img/p-compras.jpg" alt="Lista de compras" loading="lazy"><div><span class="tag">Bônus 3</span><h3>Listas de compras</h3><p>As duas semanas do cardápio com as quantidades já somadas, separadas por açougue, hortifrúti, laticínios, frios e mercearia.</p></div></div>
+      <div class="bcard"><img src="img/p-capa.jpg" alt="Capa do guia" loading="lazy"><div><span class="tag">Bônus 4</span><h3>Trocas e acompanhamento</h3><p>Tabela de trocas inteligentes (arroz por couve-flor, pão por pão de caneca), guia de medidas caseiras e ficha de acompanhamento de 14 dias.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">É para você?</div>
+    <h2>Para quem é o Prato Leve.</h2>
+    <div class="who">
+      <div><h3>É para você se</h3><ul><li>quer emagrecer comendo comida de verdade, sem shake nem produto caro;</li><li>gosta de saber quanto está comendo;</li><li>tem pouco tempo para cozinhar;</li><li>quer um cardápio pronto para não pensar no que comer.</li></ul></div>
+      <div class="no"><h3>Não é para você se</h3><ul><li>procura uma fórmula mágica sem mudar a alimentação;</li><li>está grávida, amamentando ou tem doença que exige dieta acompanhada (nesse caso, use com o seu nutricionista);</li><li>tem menos de 18 anos.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div class="offer-card">
+      <div class="eyebrow" style="text-align:center">Oferta</div>
+      <h2 class="wm">Prato <em>Leve</em></h2><p class="wmsub">Low Carb de Mercado</p>
+      <ul class="inc">
+        <li><span>50 receitas com foto, peso e valores por ingrediente</span><span>incluso</span></li>
+        <li><span>Cardápio de 14 dias com 6 refeições</span><span>incluso</span></li>
+        <li><span>Versão para celular e versão para imprimir</span><span>incluso</span></li>
+        <li><span>Listas de compras das 2 semanas</span><span>incluso</span></li>
+        <li><span>Trocas, medidas caseiras e ficha de acompanhamento</span><span>incluso</span></li>
+        <li><span>Calculadora Prato Leve (liberada no 10º dia)</span><span>bônus</span></li>
+      </ul>
+      <div class="price"><span class="only">Pagamento único</span><b><sup>R$</sup><span class="v-price"></span></b><div class="pay v-pay"></div></div>
+      <a class="btn cta" href="#">Quero o meu guia agora</a>
+      <div class="trust"><span>Acesso imediato</span><span>Garantia de 7 dias</span><span>Compra segura</span></div>
+      <div class="seals"><span>🔒 Pagamento processado pela Kiwify</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap guar">
+    <div class="seal"><div><b>7</b><span>dias de<br>garantia</span></div></div>
+    <div>
+      <h2>Risco zero para você.</h2>
+      <p class="lead">Você tem 7 dias para olhar o guia com calma. Se achar que não é para você, peça o reembolso pela própria plataforma e recebe 100% do valor de volta, sem perguntas.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow" style="text-align:center">Dúvidas</div>
+    <h2 style="text-align:center">Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Como eu recebo o guia?</summary><p>Logo depois da confirmação do pagamento você recebe no e-mail o acesso à área de membros, com os PDFs para baixar. No Pix a liberação costuma ser em minutos.</p></details>
+      <details><summary>Preciso de balança?</summary><p>Ajuda muito, principalmente nas 2 primeiras semanas. Uma balança de cozinha digital é barata. Mas todas as receitas trazem também a medida caseira (colher, fatia, unidade), e o guia tem uma tabela de equivalências.</p></details>
+      <details><summary>Os ingredientes são caros ou difíceis de achar?</summary><p>Não. A base é ovo, frango, patinho, peixe branco, legumes comuns, iogurte natural e queijo minas. Tudo de supermercado comum.</p></details>
+      <details><summary>Os valores nutricionais são confiáveis?</summary><p>Sim. Cada ingrediente foi calculado pelo peso usando a TACO, a Tabela Brasileira de Composição de Alimentos da UNICAMP. Marca e corte podem variar o resultado em cerca de 10%, como em qualquer tabela.</p></details>
+      <details><summary>Quantas calorias tem o cardápio?</summary><p>Em média cerca de 1.260 kcal por dia, com 6 refeições e cerca de 118 g de proteína. O guia ensina a aumentar as porções para homens, pessoas mais altas ou quem treina bastante.</p></details>
+      <details><summary>Funciona no celular? Os botões do PDF funcionam mesmo?</summary><p>Sim. A versão principal tem o formato da tela do celular, com letra grande. Os botões e os nomes das receitas são links: funcionam nos leitores de PDF do celular e do computador (Google Drive, leitor do iPhone, Adobe Acrobat, navegador). Também vem a versão A4 para imprimir.</p></details>
+      <details><summary>Quando recebo a calculadora?</summary><p>A Calculadora Prato Leve é liberada na sua área de membros no 10º dia após a compra. Ela funciona no navegador do celular, sem instalar nada.</p></details>
+      <details><summary>Serve para diabéticos ou gestantes?</summary><p>O guia é educativo e não substitui acompanhamento. Gestantes, lactantes e pessoas com diabetes, doença renal ou outra condição de saúde devem usar o material junto com o nutricionista ou médico.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="dark final">
+  <div class="wrap">
+    <h2>Seu próximo prato pode ser leve.</h2>
+    <p class="lead">50 receitas, 14 dias de cardápio e a lista de compras pronta. Comece hoje.</p>
+    <a class="btn cta" href="#">Quero o meu guia por R$ <span class="v-price"></span></a>
+    <div class="trust" style="justify-content:center"><span>Acesso imediato</span><span>Garantia de 7 dias</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Prato Leve · Low Carb de Mercado. Material educativo, não substitui orientação individual de nutricionista ou médico. Resultados variam de pessoa para pessoa.</p>
+    <p>Valores nutricionais: TACO, Tabela Brasileira de Composição de Alimentos, NEPA/UNICAMP, 4ª edição, 2011.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><div class="p">Guia completo<b>R$ <span class="v-price"></span></b></div><a class="btn cta" href="#">Quero agora</a></div>
+
+<script>
+/* ===== CONFIGURE AQUI ===== */
+const CONFIG = {
+  checkout: "#oferta",        // cole o link do checkout da Kiwify, ex.: "https://pay.kiwify.com.br/xxxxxx"
+  preco: "27,00",             // preço exibido
+  parcelas: "Pix ou cartão de crédito"
+};
+/* ========================== */
+const R = [{"id": "c01", "cat": "cafe", "nome": "Ovos mexidos com tomate e cebolinha", "kcal": 176, "p": 13.8}, {"id": "c02", "cat": "cafe", "nome": "Omelete de queijo branco e tomate", "kcal": 256, "p": 18.8}, {"id": "c03", "cat": "cafe", "nome": "Omelete de presunto e queijo", "kcal": 273, "p": 22.4}, {"id": "c04", "cat": "cafe", "nome": "Omelete de espinafre", "kcal": 227, "p": 17.6}, {"id": "c05", "cat": "cafe", "nome": "Ovos cozidos com mamão", "kcal": 206, "p": 14.1}, {"id": "c06", "cat": "cafe", "nome": "Ovo frito com queijo minas e tomate", "kcal": 233, "p": 16.1}, {"id": "c07", "cat": "cafe", "nome": "Crepe de ovo com frango desfiado", "kcal": 269, "p": 29.8}, {"id": "c08", "cat": "cafe", "nome": "Panqueca de banana com ovo", "kcal": 242, "p": 16.2}, {"id": "c09", "cat": "cafe", "nome": "Pão de caneca de ovo e queijo", "kcal": 209, "p": 12.7}, {"id": "c10", "cat": "cafe", "nome": "Iogurte natural com morango", "kcal": 149, "p": 8.6}, {"id": "c11", "cat": "cafe", "nome": "Iogurte com mamão e canela", "kcal": 127, "p": 7.5}, {"id": "c12", "cat": "cafe", "nome": "Queijo minas grelhado com tomate e orégano", "kcal": 244, "p": 15.0}, {"id": "a01", "cat": "almoco", "nome": "Frango grelhado com salada e legumes no vapor", "kcal": 274, "p": 37.0}, {"id": "a02", "cat": "almoco", "nome": "Frango ao molho de tomate com brócolis", "kcal": 282, "p": 37.2}, {"id": "a03", "cat": "almoco", "nome": "Frango desfiado com chuchu refogado", "kcal": 280, "p": 39.7}, {"id": "a04", "cat": "almoco", "nome": "Frango assado com abóbora", "kcal": 284, "p": 35.7}, {"id": "a05", "cat": "almoco", "nome": "Escondidinho de couve-flor com carne moída", "kcal": 338, "p": 35.1}, {"id": "a06", "cat": "almoco", "nome": "Salpicão light de frango com iogurte", "kcal": 248, "p": 41.5}, {"id": "a07", "cat": "almoco", "nome": "Patinho moído refogado com abobrinha", "kcal": 255, "p": 31.0}, {"id": "a08", "cat": "almoco", "nome": "Carne moída com repolho refogado", "kcal": 238, "p": 28.1}, {"id": "a09", "cat": "almoco", "nome": "Bife acebolado com salada", "kcal": 255, "p": 30.7}, {"id": "a10", "cat": "almoco", "nome": "Picadinho de carne com cenoura e vagem", "kcal": 254, "p": 30.7}, {"id": "a11", "cat": "almoco", "nome": "Carne de panela com legumes", "kcal": 268, "p": 30.2}, {"id": "a12", "cat": "almoco", "nome": "Filé de peixe grelhado com legumes", "kcal": 307, "p": 37.7}, {"id": "a13", "cat": "almoco", "nome": "Peixe ao molho de tomate", "kcal": 295, "p": 33.9}, {"id": "l01", "cat": "lanche", "nome": "Ovos cozidos com pepino", "kcal": 154, "p": 14.0}, {"id": "l02", "cat": "lanche", "nome": "Ovos de codorna com tomate-cereja", "kcal": 115, "p": 8.9}, {"id": "l03", "cat": "lanche", "nome": "Omelete de micro-ondas", "kcal": 148, "p": 13.4}, {"id": "l04", "cat": "lanche", "nome": "Bolinho de frango assado", "kcal": 248, "p": 35.3}, {"id": "l05", "cat": "lanche", "nome": "Rolinho de peito de peru e queijo", "kcal": 129, "p": 13.2}, {"id": "l06", "cat": "lanche", "nome": "Patê de atum com palitos de legumes", "kcal": 132, "p": 15.5}, {"id": "l07", "cat": "lanche", "nome": "Palitos de legumes com pasta de ricota", "kcal": 110, "p": 8.9}, {"id": "l08", "cat": "lanche", "nome": "Tomate-cereja com queijo minas", "kcal": 159, "p": 9.4}, {"id": "l09", "cat": "lanche", "nome": "Mamão com iogurte", "kcal": 111, "p": 4.8}, {"id": "l10", "cat": "lanche", "nome": "Morango com iogurte e canela", "kcal": 81, "p": 5.0}, {"id": "l11", "cat": "lanche", "nome": "Castanha-do-pará com morango", "kcal": 120, "p": 2.9}, {"id": "l12", "cat": "lanche", "nome": "Chips de abobrinha assada", "kcal": 100, "p": 5.2}, {"id": "j01", "cat": "jantar", "nome": "Sopa de legumes com frango", "kcal": 239, "p": 28.9}, {"id": "j02", "cat": "jantar", "nome": "Canja de chuchu", "kcal": 214, "p": 27.3}, {"id": "j03", "cat": "jantar", "nome": "Creme de abóbora com frango", "kcal": 257, "p": 35.9}, {"id": "j04", "cat": "jantar", "nome": "Caldo verde com couve-flor", "kcal": 234, "p": 30.7}, {"id": "j05", "cat": "jantar", "nome": "Omelete de legumes", "kcal": 278, "p": 21.1}, {"id": "j06", "cat": "jantar", "nome": "Salada de atum com ovo", "kcal": 243, "p": 24.3}, {"id": "j07", "cat": "jantar", "nome": "Frango grelhado com salada de pepino", "kcal": 227, "p": 30.0}, {"id": "j08", "cat": "jantar", "nome": "Wrap de alface com carne moída", "kcal": 253, "p": 26.4}, {"id": "j09", "cat": "jantar", "nome": "Abobrinha recheada com frango", "kcal": 268, "p": 36.9}, {"id": "j10", "cat": "jantar", "nome": "Berinjela recheada com carne moída", "kcal": 263, "p": 28.3}, {"id": "j11", "cat": "jantar", "nome": "Hambúrguer caseiro de patinho no prato", "kcal": 239, "p": 32.8}, {"id": "j12", "cat": "jantar", "nome": "Pizza de frigideira com massa de ovo", "kcal": 260, "p": 22.3}, {"id": "j13", "cat": "jantar", "nome": "Peixe assado com legumes", "kcal": 278, "p": 31.3}];
+const T = {"nome": "Bife acebolado com salada", "peso": 335, "tot": {"kcal": 255, "p": 30.7, "g": 11.1, "c": 8.0, "f": 3.1, "liq": 4.9}, "ing": [{"nome": "Bife de patinho", "g": 130, "kcal": 172.9, "p": 28.21, "c": 0.0, "gord": 5.85, "fib": 0.0}, {"nome": "Cebola", "g": 50, "kcal": 19.5, "p": 0.85, "c": 4.45, "gord": 0.05, "fib": 1.1}, {"nome": "Alface", "g": 40, "kcal": 4.4, "p": 0.52, "c": 0.68, "gord": 0.08, "fib": 0.72}, {"nome": "Tomate", "g": 60, "kcal": 9.0, "p": 0.66, "c": 1.86, "gord": 0.12, "fib": 0.72}, {"nome": "Pepino", "g": 50, "kcal": 5.0, "p": 0.45, "c": 1.0, "gord": 0.0, "fib": 0.55}, {"nome": "Azeite de oliva", "g": 5, "kcal": 44.2, "p": 0.0, "c": 0.0, "gord": 5.0, "fib": 0.0}]};
+document.querySelectorAll('.v-price').forEach(e=>e.textContent=CONFIG.preco);
+document.querySelectorAll('.v-pay').forEach(e=>e.textContent=CONFIG.parcelas);
+document.querySelectorAll('.cta').forEach(a=>{ if(a.closest('.hero')||a.closest('.nav')) return; a.href=CONFIG.checkout; if(/^https?:/.test(CONFIG.checkout)){a.target="_self"} });
+const fmt=(x,d=1)=>{const s=x.toFixed(d).replace('.',',');return d===1&&s.endsWith(',0')?s.slice(0,-2):s};
+// faixa de fotos
+const pics=['a09','c06','j05','a12','l07','c12','a04','j12','c10','a02','j10','l12','a01','c02','j03','l09','a05','j11'];
+const st=pics.map(p=>`<img src="img/${p}.jpg" alt="" loading="lazy">`).join('');
+document.getElementById('strip').innerHTML=st; document.getElementById('strip2').innerHTML=st;
+// grade de receitas
+const grid=document.getElementById('grid'), count=document.getElementById('count');
+const NAMES={cafe:'café da manhã',almoco:'almoço',lanche:'lanches',jantar:'jantar'};
+function show(c){
+  const rs=R.filter(r=>r.cat===c);
+  grid.innerHTML=rs.map(r=>`<div class="rcp"><img src="img/${r.id}.jpg" alt="${r.nome}" loading="lazy"><div><b>${r.nome}</b><span>${r.kcal} kcal · ${fmt(r.p,0)} g de proteína</span></div></div>`).join('');
+  count.textContent=`${rs.length} receitas de ${NAMES[c]}. No guia, cada uma tem foto, ingredientes com peso, valores por ingrediente e modo de preparo.`;
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===c));
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.c)));
+show('cafe');
+// tabela exemplo
+document.getElementById('tname').textContent=T.nome;
+document.getElementById('vt').innerHTML='<thead><tr><th>Ingrediente</th><th>Peso</th><th>kcal</th><th>Prot.</th><th>Carbo</th><th>Gord.</th><th>Fibra</th></tr></thead><tbody>'+
+ T.ing.map(x=>`<tr><td>${x.nome}</td><td class="g">${x.g} g</td><td>${fmt(x.kcal,0)}</td><td>${fmt(x.p)}</td><td>${fmt(x.c)}</td><td>${fmt(x.gord)}</td><td>${fmt(x.fib)}</td></tr>`).join('')+
+ `<tr class="tot"><td>Total</td><td class="g">${T.peso} g</td><td>${T.tot.kcal}</td><td>${fmt(T.tot.p)}</td><td>${fmt(T.tot.c)}</td><td>${fmt(T.tot.g)}</td><td>${fmt(T.tot.f)}</td></tr></tbody>`;
+// barra fixa
+const sticky=document.getElementById('sticky'), hero=document.querySelector('.hero'), offer=document.getElementById('oferta');
+function onScroll(){const h=hero.getBoundingClientRect().bottom<0;const o=offer.getBoundingClientRect();const inOffer=o.top<innerHeight&&o.bottom>0;sticky.classList.toggle('show',h&&!inOffer)}
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+// ===== demo do PDF (reprodução automática) =====
+const STEPS=[{img:'img/d-0.jpg',x:73,y:30},{img:'img/d-1.jpg',x:55,y:26},{img:'img/d-2.jpg',x:50,y:92},{img:'img/d-3.jpg',x:50,y:84},
+ {img:'img/d-4.jpg',x:75,y:2.4},{img:'img/d-5.jpg',x:27,y:31},{img:'img/d-6.jpg',x:91,y:2.4},{img:'img/d-7.jpg',x:6,y:2.4}];
+STEPS.forEach(d=>{const i=new Image();i.src=d.img});
+const sA=document.getElementById('sA'),sB=document.getElementById('sB'),finger=document.getElementById('finger'),
+ flow=[...document.querySelectorAll('#flow li')],dcount=document.getElementById('dcount'),dplay=document.getElementById('dplay');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cur=0,playing=!reduce,timers=[];
+function clearT(){timers.forEach(clearTimeout);timers=[]}
+function later(f,ms){timers.push(setTimeout(f,ms))}
+function dshow(i,animate){
+  cur=(i+STEPS.length)%STEPS.length;const d=STEPS[cur];
+  flow.forEach((l,k)=>l.classList.toggle('on',k===cur));dcount.textContent=`${cur+1} / ${STEPS.length}`;
+  if(animate&&!reduce){sB.src=d.img;sB.className='in';later(()=>{sA.src=d.img;sB.className=''},420)}else{sA.src=d.img}
+  finger.className='finger';finger.style.left=d.x+'%';finger.style.top=d.y+'%';
+}
+function cycle(){
+  clearT();if(!playing)return;
+  later(()=>{finger.classList.add('show')},700);
+  later(()=>{finger.classList.add('press')},1600);
+  later(()=>{dshow(cur+1,true);cycle()},2100);
+}
+function go(i){clearT();dshow(i,true);cycle()}
+document.getElementById('dnext').addEventListener('click',()=>go(cur+1));
+document.getElementById('dprev').addEventListener('click',()=>go(cur-1));
+flow.forEach((l,k)=>l.addEventListener('click',()=>go(k)));
+dplay.addEventListener('click',()=>{playing=!playing;dplay.textContent=playing?'❚❚':'▶';dplay.setAttribute('aria-label',playing?'Pausar demonstração':'Reproduzir demonstração');if(playing)cycle();else clearT()});
+if(reduce){dplay.textContent='▶'}
+dshow(0,false);cycle();
+// ===== cabeçalho: progresso e seção ativa =====
+const prog=document.getElementById('progress'),navl=[...document.querySelectorAll('.links a')];
+function onNav(){const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-innerHeight)*100)+'%';
+ let cur='';navl.forEach(a=>{const s=document.querySelector(a.getAttribute('href'));if(s&&s.getBoundingClientRect().top<120)cur=a});navl.forEach(a=>a.classList.toggle('on',a===cur))}
+addEventListener('scroll',onNav,{passive:true});onNav();
+
+</script>
+
+</body>
+</html>
