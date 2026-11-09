@@ -205,13 +205,14 @@ footer p{max-width:70ch}
 }
 @media (max-width:420px){.btn{width:100%}.navbtn{width:auto}.cta{align-items:stretch}.cta small{text-align:center}}
 </style>
-<!-- Pixel do Facebook: conjunto de dados do Prato Leve -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1587696496493408');
-fbq('track','PageView');
-fbq('track','ViewContent',{content_name:'Prato Leve - Guia Low Carb',value:27,currency:'BRL'});
-</script>
+<style>
+.ck{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;max-width:560px;margin:0 auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.18);padding:16px 18px calc(16px + env(safe-area-inset-bottom,0px));font-size:14px;line-height:1.5}
+.ck[hidden]{display:none}.ck p{margin:0 0 12px}.ck a{color:var(--accent)}
+.ck div{display:flex;gap:10px}.ck button{flex:1;font:inherit;font-weight:700;padding:11px 12px;border-radius:10px;cursor:pointer;border:1px solid var(--green)}
+.ck .sim{background:var(--green);color:#fff}.ck .nao{background:#fff;color:var(--green)}
+.ck button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer a{color:inherit;text-decoration:underline}footer button.lk{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer}
+</style>
 </head>
 <body>
 
@@ -369,7 +370,7 @@ fbq('track','ViewContent',{content_name:'Prato Leve - Guia Low Carb',value:27,cu
 </section>
 </main>
 
-<footer><div class="wrap"><p>Prato Leve · Low Carb de Mercado. Material educativo, não substitui orientação de nutricionista ou médico. Resultados variam de pessoa para pessoa. Valores nutricionais: TACO, NEPA/UNICAMP, 4ª ed., 2011. Este site usa cookies e o Pixel da Meta para medir e melhorar os anúncios.</p></div></footer>
+<footer><div class="wrap"><p>Prato Leve · Low Carb de Mercado. Material educativo, não substitui orientação de nutricionista ou médico. Resultados variam de pessoa para pessoa. Valores nutricionais: TACO, NEPA/UNICAMP, 4ª ed., 2011.</p><p><a href="/privacidade.html">Política de privacidade</a> · <button type="button" class="lk" id="ckPref">Preferências de cookies</button></p></div></footer>
 
 <div class="sticky" id="sticky"><div class="p">Guia completo<b>R$ <span class="v-price">27</span></b></div><a class="btn buy" href="#oferta">Quero o meu</a></div>
 
@@ -424,5 +425,23 @@ if('IntersectionObserver' in window&&!reduce){const io=new IntersectionObserver(
  else vs.forEach(play);})();
 </script>
 
+<div class="ck" id="cookies" role="dialog" aria-label="Aviso de cookies" hidden>
+<p>Usamos cookies e o Pixel da Meta para medir e melhorar os nossos anúncios. Você escolhe. <a href="/privacidade.html">Saiba mais</a></p>
+<div><button type="button" class="nao" id="ckNao">Recusar</button><button type="button" class="sim" id="ckSim">Aceitar</button></div>
+</div>
+<script>
+/* Pixel do Facebook (conjunto Prato Leve): so carrega depois do "Aceitar" */
+(function(){
+var K='pl_cookies',box=document.getElementById('cookies');
+function ler(){try{return localStorage.getItem(K)}catch(e){return null}}
+function gravar(v){try{localStorage.setItem(K,v)}catch(e){}}
+function pixel(){if(window.fbq)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1587696496493408');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Prato Leve - Guia Low Carb',value:27,currency:'BRL'})}
+var v=ler();if(v==='sim')pixel();else if(v!=='nao')box.hidden=false;
+document.getElementById('ckSim').addEventListener('click',function(){gravar('sim');box.hidden=true;pixel()});
+document.getElementById('ckNao').addEventListener('click',function(){gravar('nao');box.hidden=true});
+document.getElementById('ckPref').addEventListener('click',function(){box.hidden=false;document.getElementById('ckSim').focus()});
+})();
+</script>
 </body>
 </html>
