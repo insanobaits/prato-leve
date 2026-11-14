@@ -426,20 +426,20 @@ if('IntersectionObserver' in window&&!reduce){const io=new IntersectionObserver(
 </script>
 
 <div class="ck" id="cookies" role="dialog" aria-label="Aviso de cookies" hidden>
-<p>Usamos cookies e o Pixel da Meta para medir e melhorar os nossos anúncios. Você escolhe. <a href="/privacidade.html">Saiba mais</a></p>
-<div><button type="button" class="nao" id="ckNao">Recusar</button><button type="button" class="sim" id="ckSim">Aceitar</button></div>
+<p>Este site usa cookies e o Pixel da Meta para medir e melhorar os nossos anúncios. Se não quiser, clique em "Recusar". <a href="/privacidade.html">Saiba mais</a></p>
+<div><button type="button" class="nao" id="ckNao">Recusar</button><button type="button" class="sim" id="ckSim">Ok, entendi</button></div>
 </div>
 <script>
-/* Pixel do Facebook (conjunto Prato Leve): so carrega depois do "Aceitar" */
+/* Pixel do Facebook (conjunto Prato Leve): liga ao abrir a página; quem clicar em "Recusar" desliga e não é medido nas próximas visitas */
 (function(){
 var K='pl_cookies',box=document.getElementById('cookies');
 function ler(){try{return localStorage.getItem(K)}catch(e){return null}}
 function gravar(v){try{localStorage.setItem(K,v)}catch(e){}}
 function pixel(){if(window.fbq)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1587696496493408');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Prato Leve - Guia Low Carb',value:27,currency:'BRL'})}
-var v=ler();if(v==='sim')pixel();else if(v!=='nao')box.hidden=false;
-document.getElementById('ckSim').addEventListener('click',function(){gravar('sim');box.hidden=true;pixel()});
-document.getElementById('ckNao').addEventListener('click',function(){gravar('nao');box.hidden=true});
+var v=ler();if(v!=='nao')pixel();if(!v)box.hidden=false;
+document.getElementById('ckSim').addEventListener('click',function(){gravar('sim');box.hidden=true;if(window.fbq)fbq('consent','grant');else pixel()});
+document.getElementById('ckNao').addEventListener('click',function(){gravar('nao');box.hidden=true;if(window.fbq)fbq('consent','revoke')});
 document.getElementById('ckPref').addEventListener('click',function(){box.hidden=false;document.getElementById('ckSim').focus()});
 })();
 </script>
